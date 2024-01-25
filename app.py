@@ -49,11 +49,11 @@ def CalculateResults(playerWins, computerWins):
 while True:
     print('Enter rock, paper, or scissors, Quit to Quit')
     choice = input().lower()
-    while not (choice == 'rock' or choice == 'paper' or choice == 'scissors' or choice == 'Quit') :
+    while not (choice == 'rock' or choice == 'paper' or choice == 'scissors' or choice == 'quit') :
         print('Invalid choice, please choose again')
         choice = input()
         
-    if choice == 'Quit':
+    if choice == 'quit':
         CalculateResults(playerWins, computerWins)
         #print('Goodbye, Loser....')
         #exit()
