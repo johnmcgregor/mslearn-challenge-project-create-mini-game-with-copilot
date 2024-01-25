@@ -34,7 +34,7 @@ def CalculateResults(playerWins, computerWins):
     print('Player wins: ' + str(playerWins))
     print('Computer wins: ' + str(computerWins))
     if playerWins > computerWins:
-        print('You are the winner!')
+        print('Player wins!')
     elif playerWins < computerWins:
         print('The Computer Wins!')
     else:
@@ -48,7 +48,7 @@ def CalculateResults(playerWins, computerWins):
 
 while True:
     print('Enter rock, paper, or scissors, Quit to Quit')
-    choice = input()
+    choice = input().lower()
     while not (choice == 'rock' or choice == 'paper' or choice == 'scissors' or choice == 'Quit') :
         print('Invalid choice, please choose again')
         choice = input()
