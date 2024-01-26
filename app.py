@@ -51,7 +51,7 @@ while True:
     choice = input().lower()
     while not (choice == 'rock' or choice == 'paper' or choice == 'scissors' or choice == 'quit') :
         print('Invalid choice, please choose again')
-        choice = input()
+        choice = input().lower()
         
     if choice == 'quit':
         CalculateResults(playerWins, computerWins)
