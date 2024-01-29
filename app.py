@@ -2,7 +2,8 @@
 # print('hello world, are you out there?')
 # declare a variable to count player wins
 playerWins = 0
-computerWins = 0    
+computerWins = 0
+ties = 0  
 
 
 ###################################
@@ -30,40 +31,52 @@ def GetResult(choice):
 def my_function():
     print("Hello from a function")
 
-def CalculateResults(playerWins, computerWins):
+#def CalculateResults(playerWins, computerWins):
+def ShowScore():
+    print('*****Score********')
     print('Player wins: ' + str(playerWins))
     print('Computer wins: ' + str(computerWins))
+    print('Ties : ' + str(ties))
+    print('********************')
+
+def ShowWinner():
+    print('')
     if playerWins > computerWins:
-        print('Player wins!')
+        print('And the winner is.... You Win!!')
     elif playerWins < computerWins:
-        print('The Computer Wins!')
+        print('And the winner is.... The Computer Wins!')
     else:
         print('It\'s a tie!')
-    print('Game Over')
-    exit()
+
+
+def Quitting():
+        ShowScore()
+        ShowWinner()
+        exit()
 
 #########################
     
 
 
 while True:
-    print('Enter rock, paper, or scissors, Quit to Quit')
+    print('Enter rock, paper, or scissors, Score to show score, and Quit to Quit')
     choice = input().lower()
-    while not (choice == 'rock' or choice == 'paper' or choice == 'scissors' or choice == 'quit') :
+    while not (choice == 'rock' or choice == 'paper' or choice == 'scissors' or choice == 'score' or choice == 'quit') :
         print('Invalid choice, please choose again')
         choice = input().lower()
         
     if choice == 'quit':
-        CalculateResults(playerWins, computerWins)
-        #print('Goodbye, Loser....')
-        #exit()
-
-
-    result = GetResult(choice)
-    if result == 1 : #increment player wins 
-        playerWins += 1
-    elif result == -1 : #increment computer wins
-        computerWins += 1
+        Quitting()
+    elif choice == 'score':
+        ShowScore()
+    else:
+        result = GetResult(choice)
+        if result == 1 : #increment player wins 
+            playerWins += 1
+        elif result == -1 : #increment computer wins
+            computerWins += 1
+        elif result == 0 : # a tie
+            ties += 1
 
 
 
