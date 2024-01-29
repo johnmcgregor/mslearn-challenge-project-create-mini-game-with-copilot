@@ -46,7 +46,7 @@ def ShowWinner():
     elif playerWins < computerWins:
         print('And the winner is.... The Computer Wins!')
     else:
-        print('It\'s a tie!')
+        print('And the winner is.... it\'s a tie!')
 
 
 def Quitting():
